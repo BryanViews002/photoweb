@@ -1,0 +1,515 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 1005;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    
+    min-height: 100vh;
+    width: 100%;
+    /* max-width: 100vh; */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 1rem 2rem;
+    width: 100%;   /* Ensure it spans the full width of the screen */
+    position: fixed;  /* Fix it to the top */
+    top: 0;         /* Stick it to the top of the viewport */
+    left: 0;        /* Align it to the left */
+    z-index: 100;   /* Make sure it stays on top of other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds shadow under navbar */
+    height: 60px;   /* Set a fixed height for the navbar */
+    max-width: 1600px; /* Limit max width */
+    width: 100%;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* Adjust logo and links if needed */
+.navbar h1 {
+    font-size: 1.5rem;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+/* Hover effect for links */
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Ensure content doesn't hide behind fixed navbar */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    padding-top: 80px;  /* Add padding to ensure content is not hidden behind navbar */
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* General Heading Styles */
+h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Gallery Styles */
+
+.gallery {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.gallery-grid1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-imgg {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+.gallery-imgg:hover {
+    transform: scale(1.05); /* Zoom in slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow effect on hover */
+}
+
+/* Hero Section Styles */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Ensures the content is centered horizontally */
+  
+  background-image: 
+    url('assets/images/bg3.jpg'); /* Background Image */
+      background-attachment: fixed; /* Parallax effect */
+
+  
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Call to Action Button */
+.cta-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+     transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+.cta-button:hover {
+    background-color: #555; /* Darker on hover */
+  transform: scale(1.1); /* Slightly enlarge the button */
+}
+
+/* About Section */
+.about {
+    text-align: center;
+    margin: 2rem;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.bio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.bio p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+    margin: 2rem;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Navbar: Stack logo and links vertically */
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        height: 50vh;  /* Adjust height for smaller screens */
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .about .bio {
+        flex-direction: column;
+    }
+
+    .contact form {
+        max-width: 100%;
+    }
+}
+/* General Layout Adjustments */
+.home {
+  padding: 0;
+  margin: 0;
+}
+
+/* Hero Section - Centered Text */
+.hero {
+  height: 100vh; /* Full screen height */
+  /* background: url('../assets/images/dull1.jpg') no-repeat center center/cover; */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  padding: 12px 24px;
+  background-color: #333;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #555;
+}
+
+/* Services Section */
+.services {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.services .services-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.service-item {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.service-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.service-item:hover h3 {
+  color: #333; /* Change color of the title on hover */
+}
+
+/* Hover Effect */
+.service-item:hover {
+  background-color: #f5f5f5; /* Change background color on hover */
+  transform: translateY(-10px); /* Slightly lift the item */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+.service-item:hover {
+  transform: scale(1.05);
+}
+/* Gallery Section */
+.gallery-preview {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+}
+
+.gallery-preview h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.gallery-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.gallery-grid img {
+  transition: transform 1s ease-in-out;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* Contact Section */
+.contact {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contact button {
+  padding: 12px 24px;
+  background-color: #333;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.contact button:hover {
+  background-color: #555;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333; /* Dark background color */
+  color: white; /* Text color */
+  text-align: center; /* Center the text */
+  padding: 1rem; /* Add padding around the text */
+  width: 100%; /* Full width of the screen */
+  margin-top: 2rem; /* Add some space above the footer */
+}
+
+.footer p {
+  font-size: 1rem; /* Adjust font size */
+  margin: 0; /* Remove default margin */
+}
+
+.footer a {
+  color: #fff; /* Link color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .footer p {
+    font-size: 0.9rem; /* Slightly smaller text on smaller screens */
+  }
+}
+
+
+/* About Footer Section Styles */
+.about-footer {
+  background-color: #f4f4f4; /* Light background for contrast */
+  padding: 3rem 1.5rem; /* Padding to make the section look more spacious */
+  text-align: center; /* Center text */
+}
+
+.about-footer h3 {
+  font-size: 2rem; /* Heading size */
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.about-footer p {
+  font-size: 1rem;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto 2rem; /* Center the text and add bottom margin */
+}
+
+.about-footer .cta-button {
+  background-color: #ff6347; /* Bright color for the button */
+  color: white;
+  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.about-footer .cta-button:hover {
+  background-color: #ff4500; /* Slightly darker shade on hover */
+}
+
+@media (max-width: 768px) {
+  .about-footer h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-footer p {
+    font-size: 0.9rem;
+  }
+
+  .about-footer .cta-button {
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
